@@ -91,16 +91,36 @@ def create_adventure():
                 break
 
         elif start == "Wizard":
-            Character.char_class = "Wizard"
-            print(f'Your chosen class is {Character.char_class.upper()}')
 
             spell = input("Choose your spell: (Firestrike/Icestrike/Windstrike) ").capitalize().strip()
 
+            if spell == "Firestrike":
+                print(set_wizard("Firestrike"))
+                break
+
+            elif spell == "Icestrike":
+                print(set_wizard("Icestrike"))
+                break
+
+            elif spell == "Windstrike":
+                print(set_wizard("Windstrike"))
+                break
+
         elif start == "Bard":
-            Character.char_class = "Bard"
-            print(f'Your chosen class is {Character.char_class.upper()}')
 
             song = input("Choose your song: (Sleep/Blind/Deafen) ").capitalize().strip()
+
+            if song == "Sleep":
+                print(set_bard("Sleep"))
+                break
+
+            elif song == "Blind":
+                print(set_bard("Blind"))
+                break
+
+            elif song == "Deafen":
+                print(set_bard("Deafen"))
+                break
 
 
 create_adventure()
