@@ -1,6 +1,10 @@
+from random import choices
 import time
 
-def create_adventure():
+# rand_char = choices(["Warrior", "Mage", "Archer"])
+# print(rand_char)
+
+def create_character():
 
     start = input("Select your character: (Fighter/Wizard/Bard) ").capitalize().strip()
 
@@ -85,7 +89,8 @@ def create_adventure():
                 print("Preparing for your adventure")
                 time.sleep(3)
                 print(set_fighter("Longsword"))
-                break
+                character = set_fighter("Longsword")
+                return character
 
             elif weapon == "Greataxe":
                 print("Preparing for your adventure")
@@ -143,4 +148,11 @@ def create_adventure():
                 print(set_bard("Deafen"))
                 break
 
-create_adventure()
+def create_story():
+    pass
+
+def your_own_adventure():
+    create_character()
+    create_story(create_character())
+
+your_own_adventure()
