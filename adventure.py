@@ -104,14 +104,20 @@ def create_adventure():
             spell = input("Choose your spell: (Firestrike/Icestrike/Windstrike) ").capitalize().strip()
 
             if spell == "Firestrike":
+                print("Preparing for your adventure")
+                time.sleep(3)
                 print(set_wizard("Firestrike"))
                 break
 
             elif spell == "Icestrike":
+                print("Preparing for your adventure")
+                time.sleep(3)
                 print(set_wizard("Icestrike"))
                 break
 
             elif spell == "Windstrike":
+                print("Preparing for your adventure")
+                time.sleep(3)
                 print(set_wizard("Windstrike"))
                 break
 
@@ -120,14 +126,20 @@ def create_adventure():
             song = input("Choose your song: (Sleep/Blind/Deafen) ").capitalize().strip()
 
             if song == "Sleep":
+                print("Preparing for your adventure")
+                time.sleep(3)
                 print(set_bard("Sleep"))
                 break
 
             elif song == "Blind":
+                print("Preparing for your adventure")
+                time.sleep(3)
                 print(set_bard("Blind"))
                 break
 
             elif song == "Deafen":
+                print("Preparing for your adventure")
+                time.sleep(3)
                 print(set_bard("Deafen"))
                 break
 
