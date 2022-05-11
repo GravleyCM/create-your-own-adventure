@@ -88,7 +88,7 @@ def create_character():
             if weapon == "Longsword":
                 print("Preparing for your adventure")
                 time.sleep(3)
-                print(set_fighter("Longsword"))
+                # print(set_fighter("Longsword"))
                 character = set_fighter("Longsword")
                 return character
 
@@ -148,11 +148,10 @@ def create_character():
                 print(set_bard("Deafen"))
                 break
 
-def create_story():
-    pass
+def create_story(character):
+    print("From Create Story", character)
 
 def your_own_adventure():
-    create_character()
     create_story(create_character())
 
 your_own_adventure()
