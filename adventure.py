@@ -1,6 +1,11 @@
+import time
+
 def create_adventure():
 
+    start = input("Select your character: (Fighter/Wizard/Bard) ").capitalize().strip()
+
     while True:
+
         class Character:
             def __init__(self, health, strength, mana, defense, magic_power, char_class, attack):
                 self.health = health
@@ -71,22 +76,26 @@ def create_adventure():
                     Class = Bard\
                     Attack = {attack}"
 
-        start = input("Select your character: (Fighter/Wizard/Bard) ").capitalize().strip()
+
         if start == "Fighter":
 
             weapon = input("Choose your weapon: (Longsword/Greataxe/Bow) ").capitalize().strip()
 
             if weapon == "Longsword":
+                print("Preparing for your adventure")
+                time.sleep(3)
                 print(set_fighter("Longsword"))
                 break
 
-
             elif weapon == "Greataxe":
+                print("Preparing for your adventure")
+                time.sleep(3)
                 print(set_fighter("Greataxe"))
                 break
 
-
             elif weapon == "Bow":
+                print("Preparing for your adventure")
+                time.sleep(3)
                 print(set_fighter("Bow"))
                 break
 
@@ -121,6 +130,5 @@ def create_adventure():
             elif song == "Deafen":
                 print(set_bard("Deafen"))
                 break
-
 
 create_adventure()
