@@ -28,6 +28,7 @@ def create_adventure():
             Character.magic_power = 0
             Character.char_class = "Fighter"
             Character.attack = attack
+
             return f"Health = {Character.health}\
                     Strength = {Character.strength}\
                     Mana = {Character.mana}\
@@ -36,11 +37,39 @@ def create_adventure():
                     Class = Fighter\
                     Attack = {attack}"
 
-        def set_wizard():
-            pass
+        def set_wizard(attack):
+            Character.health = 100
+            Character.strength = 4
+            Character.mana = 8
+            Character.defense = 3
+            Character.magic_power = 8
+            Character.char_class = "Wizard"
+            Character.attack = attack
 
-        def set_bard():
-            pass
+            return f"Health = {Character.health}\
+                    Strength = {Character.strength}\
+                    Mana = {Character.mana}\
+                    Defense = {Character.defense}\
+                    Magic Power = {Character.magic_power}\
+                    Class = Wizard\
+                    Attack = {attack}"
+
+        def set_bard(attack):
+            Character.health = 100
+            Character.strength = 4
+            Character.mana = 6
+            Character.defense = 5
+            Character.magic_power = 7
+            Character.char_class = "Bard"
+            Character.attack = attack
+
+            return f"Health = {Character.health}\
+                    Strength = {Character.strength}\
+                    Mana = {Character.mana}\
+                    Defense = {Character.defense}\
+                    Magic Power = {Character.magic_power}\
+                    Class = Bard\
+                    Attack = {attack}"
 
         start = input("Select your character: (Fighter/Wizard/Bard) ").capitalize().strip()
         if start == "Fighter":
@@ -48,11 +77,12 @@ def create_adventure():
             weapon = input("Choose your weapon: (Longsword/Greataxe/Bow) ").capitalize().strip()
 
             if weapon == "Longsword":
-                set_fighter(weapon)
+                print(set_fighter("Longsword"))
                 break
 
 
             elif weapon == "Greataxe":
+                print(set_fighter("Greataxe"))
                 break
 
 
