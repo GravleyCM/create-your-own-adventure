@@ -6,6 +6,10 @@ def create_adventure():
             weapon = input("Choose your weapon: (Longsword/Greataxe/Bow) ").capitalize().strip()
             if weapon == "Longsword":
                 print("You sheith the weapon")
+            elif weapon == "Greataxe":
+                print("You sheith the weapon")
+            elif weapon == "Bow":
+                print("You sheith the weapon")
                 break
 
         elif start == "Wizard":
