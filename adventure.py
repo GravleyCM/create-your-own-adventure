@@ -4,13 +4,7 @@ import time
 # rand_char = choices(["Warrior", "Mage", "Archer"])
 # print(rand_char)
 
-def create_character():
-
-    start = input("Select your character: (Fighter/Wizard/Bard) ").capitalize().strip()
-
-    while True:
-
-        class Character:
+class Character:
             def __init__(self, health, strength, mana, defense, magic_power, char_class, attack):
                 self.health = health
                 self.strength = strength
@@ -29,6 +23,12 @@ def create_character():
                         Class = {self.char_class}\
                         Attack = {self.attack}"
 
+def create_character():
+
+    start = input("Select your character: (Fighter/Wizard/Bard) ").capitalize().strip()
+
+    while True:
+
         def set_fighter(attack):
             Character.health = 100
             Character.strength = 8
@@ -37,14 +37,22 @@ def create_character():
             Character.magic_power = 0
             Character.char_class = "Fighter"
             Character.attack = attack
+            # print(f"Health = {Character.health}\
+            #         Strength = {Character.strength}\
+            #         Mana = {Character.mana}\
+            #         Defense = {Character.defense}\
+            #         Magic Power = {Character.magic_power}\
+            #         Class = Fighter\
+            #         Attack = {attack}")
+            return Character
 
-            return f"Health = {Character.health}\
-                    Strength = {Character.strength}\
-                    Mana = {Character.mana}\
-                    Defense = {Character.defense}\
-                    Magic Power = {Character.magic_power}\
-                    Class = Fighter\
-                    Attack = {attack}"
+            # return f"Health = {Character.health}\
+            #         Strength = {Character.strength}\
+            #         Mana = {Character.mana}\
+            #         Defense = {Character.defense}\
+            #         Magic Power = {Character.magic_power}\
+            #         Class = Fighter\
+            #         Attack = {attack}"
 
         def set_wizard(attack):
             Character.health = 100
@@ -88,8 +96,6 @@ def create_character():
             if weapon == "Longsword":
                 print("Preparing for your adventure")
                 time.sleep(3)
-                # print(set_fighter("Longsword"))
-                character = set_fighter("Longsword")
                 return character
 
             elif weapon == "Greataxe":
@@ -101,8 +107,8 @@ def create_character():
             elif weapon == "Bow":
                 print("Preparing for your adventure")
                 time.sleep(3)
-                print(set_fighter("Bow"))
-                break
+                character = set_fighter("Bow")
+                return character
 
         elif start == "Wizard":
 
@@ -148,8 +154,17 @@ def create_character():
                 print(set_bard("Deafen"))
                 break
 
-def create_story(character):
-    print("From Create Story", character)
+def create_story(stats):
+    print(f"Health = {stats.health}\
+            Strength = {stats.strength}\
+            Mana = {stats.mana}\
+            Defense = {stats.defense}\
+            Magic Power = {stats.magic_power}\
+            Class = Fighter\
+            Attack = {stats.attack}")
+    for key, value in vars(Character).items():
+        if not key.startswith('__'):
+            print(f"{key} = {value}")
 
 def your_own_adventure():
     create_story(create_character())
